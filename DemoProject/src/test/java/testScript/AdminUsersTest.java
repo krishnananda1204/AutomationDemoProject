@@ -11,7 +11,7 @@ import utilities.ExcelUtilities;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base{
- @Test(retryAnalyzer=retry.Retry_class.class)    //for retry  (pacakagename.classname.class extension)
+	@Test(retryAnalyzer=retry.Retry_class.class)    //for retry  (pacakagename.classname.class extension)
 	public void adminUsersTest() throws IOException
 	{
 		   //String username="admin"; //credentials

@@ -12,7 +12,7 @@ import utilities.ExcelUtilities;
 
 public class ManageNewsTest extends Base{
 
-@Test
+	@Test
 	public void manageNewsTest() throws IOException
 	{
 		   //String username="admin"; //credentials

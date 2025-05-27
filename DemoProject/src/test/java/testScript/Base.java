@@ -21,54 +21,54 @@ import utilities.WaitUtility;
 
 
 public class Base {
- public WebDriver driver;
- public ScreenshotUtility scrshot;
- public FileInputStream fs;
- public Properties pr;
- @Parameters("browser")
- @BeforeMethod(alwaysRun=true)
- public void initializeBrowser(String browser) throws Exception    
- {
-	 try {
-		 pr=new Properties();
-		 fs=new FileInputStream(Constants.CONFIGFILE);
-		 pr.load(fs); 
-	 }
-	 catch(Exception e)
+	public WebDriver driver;
+	 public ScreenshotUtility scrshot;
+	 public FileInputStream fs;
+	 public Properties pr;
+	 @Parameters("browser")
+	 @BeforeMethod(alwaysRun=true)
+	 public void initializeBrowser(String browser) throws Exception    
 	 {
-		 System.out.println("Invalid");
+		 try {
+			 pr=new Properties();
+			 fs=new FileInputStream(Constants.CONFIGFILE);
+			 pr.load(fs); 
+		 }
+		 catch(Exception e)
+		 {
+			 System.out.println("Invalid");
+			 
+		 }
+		 //driver=new ChromeDriver();
+		if(browser.equalsIgnoreCase("chrome"))
+		 {
+			 driver=new ChromeDriver();
+		 }
+		 else if(browser.equalsIgnoreCase("edge"))
+		 {
+			 driver=new EdgeDriver();
+		 }
+		 else if(browser.equalsIgnoreCase("firefox"))
+		 {
+			 driver=new FirefoxDriver();
+		 }
+		 else
+		 {
+			 throw new Exception("invalid");
+		 }
+		 
+		 driver.get("https://groceryapp.uniqassosiates.com/admin");
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT)); //from wait Utility
+		 driver.manage().window().maximize();
 		 
 	 }
-	 //driver=new ChromeDriver();
-	if(browser.equalsIgnoreCase("chrome"))
+	 @AfterMethod(alwaysRun=true)
+	 public void driverQuitAndClose(ITestResult iTestResult) throws IOException
 	 {
-		 driver=new ChromeDriver();
+		 if (iTestResult.getStatus() == ITestResult.FAILURE) {  //fetch console and take result.when the status failure then only body execute
+				scrshot = new ScreenshotUtility();
+				scrshot.getScreenShot(driver, iTestResult.getName()); //getScreenShot method is instance method so create the object for particular class
+			}
+		// driver.quit(); //after run screenshot is taken
 	 }
-	 else if(browser.equalsIgnoreCase("edge"))
-	 {
-		 driver=new EdgeDriver();
-	 }
-	 else if(browser.equalsIgnoreCase("firefox"))
-	 {
-		 driver=new FirefoxDriver();
-	 }
-	 else
-	 {
-		 throw new Exception("invalid");
-	 }
-	 
-	 driver.get("https://groceryapp.uniqassosiates.com/admin");
-	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT)); //from wait Utility
-	 driver.manage().window().maximize();
-	 
- }
- @AfterMethod(alwaysRun=true)
- public void driverQuitAndClose(ITestResult iTestResult) throws IOException
- {
-	 if (iTestResult.getStatus() == ITestResult.FAILURE) {  //fetch console and take result.when the status failure then only body execute
-			scrshot = new ScreenshotUtility();
-			scrshot.getScreenShot(driver, iTestResult.getName()); //getScreenShot method is instance method so create the object for particular class
-		}
-	// driver.quit(); //after run screenshot is taken
- }
 }

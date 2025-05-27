@@ -11,7 +11,7 @@ import pages.LoginPage;
 import utilities.ExcelUtilities;
 
 public class LoginTest extends Base{
-@Test(groups= {"regression"})  //for regression testing
+	@Test(groups= {"regression"})  //for regression testing
 	public void verifyTheUserIsAbleToLoginUsingValidCreadentials() throws IOException
 	{
 	  // String username="admin"; //credentials
@@ -76,5 +76,4 @@ public class LoginTest extends Base{
 		  Assert.assertTrue(isHomePageNotAvailable);
     }
  
-  
 }
