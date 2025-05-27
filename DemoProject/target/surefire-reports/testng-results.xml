@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-05-27T10:37:58 IST" name="Suite" finished-at="2025-05-27T10:38:15 IST" duration-ms="17138">
+    <groups>
+    </groups>
+    <test started-at="2025-05-27T10:37:58 IST" name="Test" finished-at="2025-05-27T10:38:15 IST" duration-ms="17138">
+      <class name="testScript.ManageNewsTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@7a35b0f5]" started-at="2025-05-27T10:38:09 IST" name="initializeBrowser" finished-at="2025-05-27T10:38:12 IST" duration-ms="2722" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="manageNewsTest()[pri:0, instance:testScript.ManageNewsTest@7a35b0f5]" started-at="2025-05-27T10:38:12 IST" name="manageNewsTest" finished-at="2025-05-27T10:38:15 IST" duration-ms="3452" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- manageNewsTest -->
+        <test-method is-config="true" signature="driverQuitAndClose(org.testng.ITestResult)[pri:0, instance:testScript.ManageNewsTest@7a35b0f5]" started-at="2025-05-27T10:38:15 IST" name="driverQuitAndClose" finished-at="2025-05-27T10:38:15 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=manageNewsTest status=SUCCESS method=ManageNewsTest.manageNewsTest()[pri:0, instance:testScript.ManageNewsTest@7a35b0f5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuitAndClose -->
+      </class> <!-- testScript.ManageNewsTest -->
+      <class name="testScript.AdminUsersTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUsersTest@74e28667]" started-at="2025-05-27T10:37:58 IST" name="initializeBrowser" finished-at="2025-05-27T10:38:04 IST" duration-ms="5784" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="adminUsersTest()[pri:0, instance:testScript.AdminUsersTest@74e28667]" started-at="2025-05-27T10:38:04 IST" name="adminUsersTest" finished-at="2025-05-27T10:38:09 IST" duration-ms="5081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminUsersTest -->
+        <test-method is-config="true" signature="driverQuitAndClose(org.testng.ITestResult)[pri:0, instance:testScript.AdminUsersTest@74e28667]" started-at="2025-05-27T10:38:09 IST" name="driverQuitAndClose" finished-at="2025-05-27T10:38:09 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=adminUsersTest status=SUCCESS method=AdminUsersTest.adminUsersTest()[pri:0, instance:testScript.AdminUsersTest@74e28667] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuitAndClose -->
+      </class> <!-- testScript.AdminUsersTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
