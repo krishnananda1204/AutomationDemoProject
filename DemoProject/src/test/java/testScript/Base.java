@@ -36,7 +36,7 @@ public class Base {
 		 }
 		 catch(Exception e)
 		 {
-			 System.out.println("Invalid");
+			 System.out.println("Invalid URL");
 			 
 		 }
 		 //driver=new ChromeDriver();
@@ -54,10 +54,11 @@ public class Base {
 		 }
 		 else
 		 {
-			 throw new Exception("invalid");
+			 throw new Exception("invalid Browser");
 		 }
 		 
-		 driver.get("https://groceryapp.uniqassosiates.com/admin");
+		// driver.get("https://groceryapp.uniqassosiates.com/admin");
+		driver.get(pr.getProperty("url"));  //config file add
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT)); //from wait Utility
 		 driver.manage().window().maximize();
 		 

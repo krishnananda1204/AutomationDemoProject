@@ -12,27 +12,31 @@ public class ManageNewsPage {
 			PageFactory.initElements(driver, this );
 		}
 
-		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='active nav-link']") WebElement manageNewsMoreInfo;
+		//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='active nav-link']") WebElement manageNewsMoreInfo;
 		@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newButton;
 		@FindBy(xpath="//textarea[@id='news']") WebElement newsField;
 		@FindBy(xpath="//button[@name='create']") WebElement saveButton;
 		@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert;	
 		
-		public void clickManageNewsMoreInfo()
+	/*	public void clickManageNewsMoreInfo()
 		{
 			manageNewsMoreInfo.click();
 		}
-		public void clickNewButton()
+		*/
+		public ManageNewsPage clickNewButton()
 		{
 			newButton.click();
+			return this;
 		}
-		public void enterNews(String news)
+		public ManageNewsPage enterNews(String news)
 		{
 			newsField.sendKeys(news);
+			return this;
 		}
-		public void clickSaveButton()
+		public ManageNewsPage clickSaveButton()
 		{
 			saveButton.click();
+			return this;
 		}
 		public boolean isAlertDisplayed()  //here check the alert is displayed or not.so need return and give in to boolean
 		{

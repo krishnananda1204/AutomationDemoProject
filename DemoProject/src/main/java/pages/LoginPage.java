@@ -19,19 +19,22 @@ public class LoginPage {
 		
 		
 		
-		public void enterUsename(String username)
+		public LoginPage enterUsename(String username)
 		{
 			usernameField.sendKeys(username);
+			return this;  //return this is use for stay in the current page
 		}
 		
-		public void enterPassword(String password)
+		public LoginPage enterPassword(String password)
 		{
 			passwordField.sendKeys(password);
+			return this;
 		}
 		
-		public void clickSignInButton()
+		public HomePage clickSignInButton()
 		{
 			signinField.click();
+			return new HomePage(driver);  //navigate to another page use(return new HomePage(driver); )
 		}
 		
 		public boolean isDashboardDisplayed()

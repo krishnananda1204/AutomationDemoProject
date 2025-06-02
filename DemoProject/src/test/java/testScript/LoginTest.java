@@ -7,10 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtilities;
 
 public class LoginTest extends Base{
+	HomePage homepage;
 	@Test(groups= {"regression"})  //for regression testing
 	public void verifyTheUserIsAbleToLoginUsingValidCreadentials() throws IOException
 	{
@@ -19,9 +21,9 @@ public class LoginTest extends Base{
 	  String username=ExcelUtilities.getStringData(1, 0, "loginpage"); //first two parameter is the position of datas in excel and last parameter is the sheet name
 	  String password=ExcelUtilities.getStringData(1, 1, "loginpage");
 	  LoginPage loginpage=new LoginPage(driver);	//object create
-	  loginpage.enterUsename(username);
-	  loginpage.enterPassword(password);
-	  loginpage.clickSignInButton();
+	  loginpage.enterUsename(username).enterPassword(password);
+	  //loginpage.enterPassword(password);
+	  homepage=loginpage.clickSignInButton(); //siginbutton in the loginpage but it navigate to home page use this code
 	  boolean isHomePageAvailable=loginpage.isDashboardDisplayed();
 	  Assert.assertTrue(isHomePageAvailable);
 	  //boolean isHomePageNotAvailable=loginpage.isRedAlertDisplayed();
